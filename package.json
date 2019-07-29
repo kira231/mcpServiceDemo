@@ -1,5 +1,5 @@
 {
-  "name": "y",
+  "name": "datashow",
   "version": "1.0.0",
   "description": "A Vue.js project",
   "author": "liuqiangh <13020061876@163.com>",
@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "echarts": "^4.2.1",
-    "element-ui": "^2.10.1",
+    "element-ui": "^2.11.1",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },
