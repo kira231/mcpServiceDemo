@@ -16,7 +16,19 @@
                 </div>
                 <el-row style="height:80%">
                   <el-row style="margin:20px">
-                    <div class="block"
+                    <table class="gridtable">
+                      <tr>
+                        <th>研究名称</th>
+                        <th>发起者</th>
+                        <th>参与者</th>
+                      </tr>
+                      <tr v-for="(content, index) in contents">
+                        <th>{{ content.name }}</th>
+                        <th>{{ content.initiator }}</th>
+                        <th>{{ content.participator }}</th>
+                      </tr>
+                    </table>
+                    <!-- <div class="block"
                          v-for="(content,index) in contents"
                          :key="index">
                       <el-row type="flex"
@@ -24,7 +36,7 @@
                               style="margin-top:20px">
                         <span class="demonstration"><i class="el-icon-document"> {{ content }}</i></span>
                       </el-row>
-                    </div>
+                    </div> -->
                   </el-row>
                 </el-row>
               </div>
@@ -306,9 +318,47 @@ export default {
         icon: 'el-icon-check',
         color: '#E6A23C'
       }],
-      contents: ['浙江省糖尿病发病率研究', '浙江省肺癌发病率研究', '浙江省糖尿病发病率研究',
-        '浙江省肺癌发病率研究', '浙江省糖尿病发病率研究', '浙江省肺癌发病率研究',
-        '浙江省糖尿病发病率研究', '浙江省肺癌发病率研究', '浙江省肺癌发病率研究',
+      contents: [
+        {
+          name: '浙江省糖尿病发病率研究',
+          initiator: '浙一',
+          participator: '浙二、省肿瘤',
+        },
+        {
+          name: '浙江省糖尿病发病率研究',
+          initiator: '浙一',
+          participator: '浙二、省肿瘤',
+        },
+        {
+          name: '浙江省糖尿病发病率研究',
+          initiator: '浙一',
+          participator: '浙二、省肿瘤',
+        },
+        {
+          name: '浙江省糖尿病发病率研究',
+          initiator: '浙一',
+          participator: '浙二、省肿瘤',
+        },
+        {
+          name: '浙江省糖尿病发病率研究',
+          initiator: '浙一',
+          participator: '浙二、省肿瘤',
+        },
+        {
+          name: '浙江省糖尿病发病率研究',
+          initiator: '浙一',
+          participator: '浙二、省肿瘤',
+        },
+        {
+          name: '浙江省糖尿病发病率研究',
+          initiator: '浙一',
+          participator: '浙二、省肿瘤',
+        },
+        {
+          name: '浙江省糖尿病发病率研究',
+          initiator: '浙一',
+          participator: '浙二、省肿瘤',
+        },
       ],
     }
   },
@@ -371,5 +421,29 @@ export default {
   background-color: rgba(250, 250, 253, 0.3);
   height: 30px;
   font-size: 15px;
+}
+table.gridtable {
+  font-family: verdana, arial, sans-serif;
+  font-size: 14px;
+  color: #333333;
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
+  word-wrap: break-word;
+}
+table.gridtable th {
+  border: 1px solid rgb(235, 238, 245);
+  padding: 3px 7px 2px 7px;
+  /* background-color: #eeeeee; */
+  color: #eef0f5;
+  width: 30%;
+}
+table.gridtable td {
+  border: 1px solid rgb(235, 238, 245);
+  padding: 3px 7px 2px 7px;
+  background-color: #ffffff;
+  width: 70%;
+  word-wrap: break-word;
+  text-align: center;
 }
 </style>
