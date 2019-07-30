@@ -34,6 +34,7 @@
             <!-- <div class="xpanel-wrapper xpanel-wrapper-1">
               <div class="xpanel"> -->
             <!-- 地图散点 -->
+            <s1Initiating ref="s1Initiating"></s1Initiating>
             <!-- <div class="fill-h"
                      id="scatterMap"></div>
               </div>
@@ -184,7 +185,11 @@
 <script>
 
 import echarts from 'echarts';
+import s1Initiating from './s1Initiating.vue';
 export default {
+  components: {
+    s1Initiating
+  },
   data() {
     return {
       researchView: [
