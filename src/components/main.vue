@@ -15,29 +15,31 @@
                   <span style="margin-left:20px">研究列表</span>
                 </div>
                 <el-row style="height:80%">
-                  <el-row style="margin:20px">
-                    <table class="gridtable">
-                      <tr>
-                        <th>研究名称</th>
-                        <th>发起者</th>
-                        <th>参与者</th>
-                      </tr>
-                      <tr v-for="(content, index) in contents">
-                        <th>{{ content.name }}</th>
-                        <th>{{ content.initiator }}</th>
-                        <th>{{ content.participator }}</th>
-                      </tr>
-                    </table>
-                    <!-- <div class="block"
-                         v-for="(content,index) in contents"
-                         :key="index">
-                      <el-row type="flex"
-                              align="middle"
-                              style="margin-top:20px">
-                        <span class="demonstration"><i class="el-icon-document"> {{ content }}</i></span>
-                      </el-row>
-                    </div> -->
+                  <el-row v-for="content in contents"
+                          :key="content.label"
+                          style="margin:20px">
+                    <el-popover placement="top-end"
+                                width="200"
+                                trigger="hover"
+                                popper-class="my-popover">
+                      <div class="el-popover-content">发起者： {{ content.initiator }}</div>
+                      <div class="el-popover-content">参与者： {{ content.participator }}</div>
+                      <div class="researchList"
+                           slot="reference">
+                        <p><i style="margin-right:20px">{{content.label}}</i>{{ content.name }}</p>
+                      </div>
+                    </el-popover>
                   </el-row>
+                </el-row>
+                <el-row>
+                  <el-col :span="8"
+                          :offset="16">
+                    <el-button type="primary"
+                               round
+                               icon="el-icon-edit"
+                               size="medium"
+                               style="background-color:#5dc2fe">新建方案</el-button>
+                  </el-col>
                 </el-row>
               </div>
             </div>
@@ -47,10 +49,6 @@
               <div class="xpanel"> -->
             <!-- 地图散点 -->
             <s1Initiating ref="s1Initiating"></s1Initiating>
-            <!-- <div class="fill-h"
-                     id="scatterMap"></div>
-              </div>
-            </div> -->
           </div>
           <div class="col-lg-3 fill-h">
             <div class="xpanel-wrapper xpanel-wrapper-3">
@@ -85,33 +83,6 @@
                         </td>
                       </tr>
                     </table>
-                    <!-- <el-row style="margin:10px">
-                      <div v-for="item in researchView"
-                           :key="item.label"
-                           class="text item">
-                        <span v-if="item.label==0"><i class="el-icon-thumb"> </i> {{item.name}}</span>
-                        <span v-if="item.label==1"><i class="el-icon-check"> </i> {{item.name}}</span>
-                        <span v-if="item.label==2"><i class="el-icon-loading"> </i> {{item.name}}</span>
-                        <div style="margin-top:10px;height:60px;background-color: rgba(250, 250, 253, 0.3)">
-                          <el-row type="flex"
-                                  align="middle"
-                                  justify="space-between"
-                                  style="height:60px;margin-left:20px;">
-                            <el-col :span="8">
-                              <span class="researchNum0"
-                                    v-if="item.label==0">{{item.number}}</span>
-                              <span class="researchNum1"
-                                    v-if="item.label==1">{{item.number}}</span>
-                              <span class="researchNum2"
-                                    v-if="item.label==2">{{item.number}}</span>
-                            </el-col>
-                            <el-col :span="8">
-                              <span class="researchNum">例</span>
-                            </el-col>
-                          </el-row>
-                        </div>
-                      </div>
-                    </el-row> -->
                   </el-row>
                 </div>
               </div>
@@ -131,7 +102,6 @@
                       <el-scrollbar style="height:80%;margin-top:20px"
                                     class-="el-scrollbar__wrap">
                         <el-row>
-                          <!-- <el-col :span="12"> -->
                           <div class="block">
                             <el-timeline>
                               <el-timeline-item v-for="(activity, index) in activities"
@@ -158,7 +128,6 @@
                       <el-scrollbar style="height:80%;margin-top:20px"
                                     class-="el-scrollbar__wrap">
                         <el-row>
-                          <!-- <el-col :span="12"> -->
                           <div class="block">
                             <el-timeline>
                               <el-timeline-item v-for="(activity, index) in activities2"
@@ -180,13 +149,6 @@
                 </el-row>
               </div>
             </div>
-            <!-- <div class="xpanel-wrapper xpanel-wrapper-3">
-              <div class="xpanel"> -->
-            <!-- 区县地图 -->
-            <!-- <div class="fill-h"
-                     id="countyMap"></div>
-              </div>
-            </div> -->
           </div>
         </div>
       </div>
@@ -325,41 +287,49 @@ export default {
       }],
       contents: [
         {
+          label: 1,
           name: '浙江省糖尿病发病率研究',
           initiator: '浙一',
           participator: '浙二、省肿瘤',
         },
         {
+          label: 2,
           name: '浙江省糖尿病发病率研究',
           initiator: '浙一',
           participator: '浙二、省肿瘤',
         },
         {
+          label: 3,
           name: '浙江省糖尿病发病率研究',
           initiator: '浙一',
           participator: '浙二、省肿瘤',
         },
         {
+          label: 4,
           name: '浙江省糖尿病发病率研究',
           initiator: '浙一',
           participator: '浙二、省肿瘤',
         },
         {
+          label: 5,
           name: '浙江省糖尿病发病率研究',
           initiator: '浙一',
           participator: '浙二、省肿瘤',
         },
         {
+          label: 6,
           name: '浙江省糖尿病发病率研究',
           initiator: '浙一',
           participator: '浙二、省肿瘤',
         },
         {
+          label: 7,
           name: '浙江省糖尿病发病率研究',
           initiator: '浙一',
           participator: '浙二、省肿瘤',
         },
         {
+          label: 8,
           name: '浙江省糖尿病发病率研究',
           initiator: '浙一',
           participator: '浙二、省肿瘤',
