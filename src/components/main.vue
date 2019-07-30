@@ -11,12 +11,14 @@
           <div class="col-lg-3 fill-h">
             <div class="xpanel-wrapper xpanel-wrapper-2">
               <div class="xpanel">
-                <div class="title">研究列表</div>
-                <el-row style="height:800px">
+                <div class="title">
+                  <span style="margin-left:20px">研究列表</span>
+                </div>
+                <el-row style="height:80%">
                   <el-row style="margin:20px">
                     <div class="block"
-                         v-for="content in contents"
-                         :key="content">
+                         v-for="(content,index) in contents"
+                         :key="index">
                       <el-row type="flex"
                               align="middle"
                               style="margin-top:20px">
@@ -29,21 +31,48 @@
             </div>
           </div>
           <div class="col-lg-6 fill-h">
-            <div class="xpanel-wrapper xpanel-wrapper-1">
-              <div class="xpanel">
-                <!-- 地图散点 -->
-                <div class="fill-h"
+            <!-- <div class="xpanel-wrapper xpanel-wrapper-1">
+              <div class="xpanel"> -->
+            <!-- 地图散点 -->
+            <!-- <div class="fill-h"
                      id="scatterMap"></div>
               </div>
-            </div>
+            </div> -->
           </div>
           <div class="col-lg-3 fill-h">
             <div class="xpanel-wrapper xpanel-wrapper-3">
               <div class="xpanel">
                 <div class="fill-h">
-                  <div class="title">研究总览</div>
-                  <el-row style="height:400px">
-                    <el-row style="margin:10px">
+                  <div class="title">
+                    <span style="margin-left:20px">研究总览</span></div>
+                  <el-row style="height:85%">
+                    <table class="data-t">
+                      <tr>
+                        <th><img src="../static/img/icon-01.png" /></th>
+                        <td>
+                          <p><span>2000</span></p>
+                          <p>协同研究发起总数</p>
+                        </td>
+                        <th><img src="../static/img/icon-02.png" /></th>
+                        <td>
+                          <p><span>1288</span></p>
+                          <p>协同研究完成总数</p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th><img src="../static/img/icon-05.png" /></th>
+                        <td>
+                          <p><span>5236</span></p>
+                          <p>正在分布式计算协同研究总数</p>
+                        </td>
+                        <th><img src="../static/img/icon-06.png" /></th>
+                        <td>
+                          <p><span>8567</span></p>
+                          <p>还不知道叫什么</p>
+                        </td>
+                      </tr>
+                    </table>
+                    <!-- <el-row style="margin:10px">
                       <div v-for="item in researchView"
                            :key="item.label"
                            class="text item">
@@ -69,15 +98,16 @@
                           </el-row>
                         </div>
                       </div>
-                    </el-row>
+                    </el-row> -->
                   </el-row>
                 </div>
               </div>
             </div>
             <div class="xpanel-wrapper xpanel-wrapper-3">
               <div class="xpanel">
-                <div class="title">操作数据</div>
-                <el-row style="height:350px"
+                <div class="title">
+                  <span style="margin-left:20px">操作数据</span></div>
+                <el-row style="height:80%"
                         class="performdata">
                   <el-carousel indicator-position="outside">
                     <el-carousel-item>
@@ -129,7 +159,6 @@
                                   {{activity.content}}</div>
                               </el-timeline-item>
                             </el-timeline>
-
                           </div>
                         </el-row>
                       </el-scrollbar>
@@ -277,7 +306,10 @@ export default {
         icon: 'el-icon-check',
         color: '#E6A23C'
       }],
-      contents: ['浙江省糖尿病发病率研究', '浙江省肺癌发病率研究', '浙江省糖尿病发病率研究', '浙江省肺癌发病率研究', '浙江省糖尿病发病率研究', '浙江省肺癌发病率研究', '浙江省糖尿病发病率研究', '浙江省肺癌发病率研究',],
+      contents: ['浙江省糖尿病发病率研究', '浙江省肺癌发病率研究', '浙江省糖尿病发病率研究',
+        '浙江省肺癌发病率研究', '浙江省糖尿病发病率研究', '浙江省肺癌发病率研究',
+        '浙江省糖尿病发病率研究', '浙江省肺癌发病率研究', '浙江省肺癌发病率研究',
+      ],
     }
   },
   mounted() {
