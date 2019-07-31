@@ -85,7 +85,8 @@ body.bg04 {background-image:url("../img/bg04.png");}
 .data-t td {padding-left:15px;}
 .data-t p {margin:5px 0;line-height:1;font-size:14px;color:#b0c2f9;}
 .data-t p span {font-size:32px;font-weight:bold;color:#fff;}
-.researchList p i{font-family: 'Mistral';color: rgb(93, 194, 254);font-size:22px;background:url("../img/icon-bg.png") center / 100% no-repeat;}
-.researchList p{color: rgb(93, 194, 254);font-size:20px;font-family: '华文行楷';}
-.el-popover-content{font-family: '华文行楷';color: white;}
+.researchList p i{color: #67C23A;font-size:17px;}
+/* .researchList p{color: rgb(93, 194, 254);font-size:15px;} */
+.researchList p{color: white;font-size:15px;}
+.el-popover-content{color: white;}
 .my-popover{background: #0f1c30;}
