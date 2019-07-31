@@ -7,12 +7,11 @@
 import echarts from 'echarts';
 import "echarts/map/js/china.js";
 import "echarts/map/js/province/zhejiang.js";
-import hangzhoushi from '../../static/echarts-mapJson/geometryCouties/hangzhoushi.json'
-import hangzhou_geo from '../../static/echarts-mapJson/geometryCouties/hz_geo.json'
+import hangzhoushi from '../../static/echarts-mapJson/geometryCouties/hangzhoushi.json'//完成杭州json
+import hangzhou_geo from '../../static/echarts-mapJson/geometryCouties/hz_geo.json'//删去部分杭州市县json
 export default {
   data() {
     return {
-      hangzhouJson: hangzhoushi
 
     }
   },
@@ -89,7 +88,7 @@ export default {
       //用$echarts是因为上面注册使用的 Vue.prototype.$echarts
       let myChart = this.$echarts.init(document.getElementById('mapChart'))
       myChart.setOption(mapOption)
-      that.$echarts.registerMap('浙江', hangzhou_geo);
+      that.$echarts.registerMap('浙江', hangzhoushi);
       myChart.setOption(mapOption)
 
     }
