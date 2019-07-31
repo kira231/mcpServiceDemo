@@ -48,7 +48,8 @@
             <!-- <div class="xpanel-wrapper xpanel-wrapper-1">
               <div class="xpanel"> -->
             <!-- 地图散点 -->
-            <s1Initiating ref="s1Initiating"></s1Initiating>
+            <!-- <s1Initiating ref="s1Initiating"></s1Initiating> -->
+            <drilldownmap ref="drilldownmap"></drilldownmap>
           </div>
           <div class="col-lg-3 fill-h">
             <div class="xpanel-wrapper xpanel-wrapper-3">
@@ -160,9 +161,11 @@
 
 import echarts from 'echarts';
 import s1Initiating from './s1Initiating.vue';
+import drilldownmap from './drilldownmap';
 export default {
   components: {
-    s1Initiating
+    s1Initiating,
+    drilldownmap
   },
   data() {
     return {
