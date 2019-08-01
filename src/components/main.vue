@@ -48,8 +48,8 @@
             <!-- <div class="xpanel-wrapper xpanel-wrapper-1">
               <div class="xpanel"> -->
             <!-- 地图散点 -->
-            <!-- <s1Initiating ref="s1Initiating"></s1Initiating> -->
-            <drilldownmap ref="drilldownmap"></drilldownmap>
+            <s1Initiating ref="s1Initiating"></s1Initiating>
+            <!-- <drilldownmap ref="drilldownmap"></drilldownmap> -->
           </div>
           <div class="col-lg-3 fill-h">
             <div class="xpanel-wrapper xpanel-wrapper-3">
