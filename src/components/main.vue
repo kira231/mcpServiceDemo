@@ -26,7 +26,11 @@
                       <div class="el-popover-content">参与者： {{ content.participator }}</div>
                       <div class="researchList"
                            slot="reference">
-                        <p><i style="margin-right:20px">{{content.label}}</i>{{ content.name }}</p>
+                        <p><i style="margin-right:10px"
+                             :class="[content.label>4?'el-icon-success':'el-icon-loading']"></i>
+                          <i1 :class="[content.label>4?'content-success':'content-loading']">{{content.label>4?'[已完成] ':'[正在进行中] '}}</i1>
+                          {{ content.name }}
+                        </p>
                       </div>
                     </el-popover>
                   </el-row>
@@ -423,5 +427,14 @@ table.gridtable td {
   width: 70%;
   word-wrap: break-word;
   text-align: center;
+}
+.researchList >>> .el-icon-loading {
+  color: #e6a23c;
+}
+.content-success {
+  color: #67c23a;
+}
+.content-loading {
+  color: #e6a23c;
 }
 </style>
